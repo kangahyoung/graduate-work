@@ -27,7 +27,11 @@ public class PlayerBase : CharacterBase
     public float xSensitivity = 1.0f;
     public float ySensitivity = 1.0f;
 
-    public float rotSpeed = 3.0f;
+
+    [Header("Rotate")]
+    public float rotSpeed = 1.0f;   // 회전 속도
+    public float MinimumX = 1.0f;   // 회전시 최소 각도
+    public float MaximumX = 1.0f;   // 회전시 최대 각도
 
     // Start is called before the first frame update
     void Awake()
