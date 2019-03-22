@@ -54,8 +54,14 @@ public class PlayerMove : PlayerBase
         float rotX = Input.GetAxis("Mouse Y") * rotSpeed;
         float rotY = Input.GetAxis("Mouse X") * rotSpeed;
 
-        this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
-        cam.transform.localRotation *= Quaternion.Euler(-rotX,0, 0);
+        // 캐릭터 회전
+        this.transform.localRotation *= Quaternion.Euler(0f, rotY, 0f);
+
+        // 카메라 회전
+        cam.transform.localRotation *= Quaternion.Euler(-rotX, 0f, 0f);
+
+        cam.transform.localRotation = ClampRotationX(cam.transform.localRotation);
+
     }
 
     private Vector2 GetInput()
@@ -113,6 +119,8 @@ public class PlayerMove : PlayerBase
                 m_Collider.height /= 2;
                 Debug.Log(center);
 
+                Vector3 CrouchCam = new Vector3(cam.transform.position.x, cam.transform.position.y / 2, cam.transform.position.z);
+                cam.transform.position = Vector3.Lerp(cam.transform.position, CrouchCam, 1);
             }
 
             PlayerCurrentSpeed /= RunMultiplier;
@@ -128,6 +136,9 @@ public class PlayerMove : PlayerBase
                 Debug.Log(center);
                 m_Collider.center = center;
                 m_Collider.height *= 2;
+
+                Vector3 CrouchCam = new Vector3(cam.transform.position.x, cam.transform.position.y * 2, cam.transform.position.z);
+                cam.transform.position = Vector3.Lerp(cam.transform.position, CrouchCam, 1);
             }
 
             m_Crouching = false;
@@ -135,7 +146,21 @@ public class PlayerMove : PlayerBase
         }
     }
 
-    
+
+    private Quaternion ClampRotationX(Quaternion quat)  //카메라 회전각 제한 함수
+    {
+        quat.x /= quat.w;
+        quat.y /= quat.w;
+        quat.z /= quat.w;
+        quat.w = 1.0f;
+
+        float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(quat.x);
+        angleX = Mathf.Clamp(angleX, MinimumX, MaximumX);
+        quat.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
+
+        return quat;
+    }
+
     
     #endregion
 }
