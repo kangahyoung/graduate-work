@@ -230,7 +230,7 @@ namespace MiBand_BLEManager {
     void RunPingSensor() {
       while (HMCCharacteristic != null) {
         manager.Write(HMCCharacteristic, new byte[] { 0x16 });
-        Thread.Sleep(5000);
+        Thread.Sleep(2000);
       }
     }
   }
