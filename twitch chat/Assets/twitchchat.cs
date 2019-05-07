@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Net.Sockets;
 using System.IO;
 using UnityEngine.UI;
+using static System.Random;
+
 
 public class twitchchat : MonoBehaviour
 {
@@ -17,9 +19,24 @@ public class twitchchat : MonoBehaviour
 
     public Text chatBox;
 
+    //C#컨테이너 생성부
+    List<string> chatresultID = new List<string>();
+    List<string> rchatresultID = new List<string>();
+
+
+
     void Start()
     {
         Connect();
+                            
+        chatresultID.Add("1path");
+        chatresultID.Add("2path");
+        chatresultID.Add("3path");
+        chatresultID.Add("4path");
+        chatresultID.Add("5path");
+        chatresultID.Add("6path");
+        chatresultID.Add("7path");
+
     }
 
     
@@ -33,10 +50,16 @@ public class twitchchat : MonoBehaviour
         ReadChat();
         if (Input.GetKeyDown(KeyCode.A))
         {
-            SendChat("A키를 누른거 같은데 맞나요?");
-        }else if (Input.GetKeyDown(KeyCode.B))
-        {
-            SendChat("B키를 누른거 같은데 맞나요?");
+           
+
+            SendChat_content("투표를 시작합니다.");
+            //고른 값 출력
+            PatternShuffle();
+            for(int i=0;i<3;i++)
+            {
+                SendChat_vote( "#"+(i+1) + "  " + rchatresultID[i].ToString());
+            }
+            SendChat_content("1~3번 중 하나를 골라 #(숫자)투표해주세요.");
         }
 
     }
@@ -54,7 +77,7 @@ public class twitchchat : MonoBehaviour
         writer.Flush();
     }
 
-    public void SendChat(string data)
+    public void SendChat_content(string data)
     {
         string message_to_send = "PRIVMSG #" + channelName + " :" + data;
         writer.WriteLine(message_to_send);
@@ -62,7 +85,16 @@ public class twitchchat : MonoBehaviour
         print(String.Format("{0}: {1}", "BotAI", data));
         chatBox.text = chatBox.text + "\n" + String.Format("{0}: {1}", "BotAI", data);
     }
-   
+
+    public void SendChat_vote(string data)
+    {
+        string message_to_send = "PRIVMSG #" + channelName + " :" + data;
+        writer.WriteLine(message_to_send);
+        writer.Flush();
+        print(String.Format("{0}: {1}", "BotAI", data));
+        chatBox.text = chatBox.text + "\n" + String.Format("{0}: {1}", "BotAI", data);
+    }
+
     private void ReadChat()
     {
         if (twitchClient.Available > 0)
@@ -86,4 +118,32 @@ public class twitchchat : MonoBehaviour
        
         }
     }
+    public void PatternShuffle()
+    {
+        rchatresultID = ShuffleList<string>(chatresultID);
+        //Debug.Log(ShuffleList<int>(chatresultID));
+        for(int i=0;i<3;i++)
+        Debug.Log(rchatresultID[i]);
+    }
+
+    private List<E>ShuffleList<E>(List<E>inputList)
+    {
+        List<E> randomList = new List<E>();
+
+        System.Random r = new System.Random();
+        int randomIndex = 0;
+        while(inputList.Count>2)
+        {
+            randomIndex = r.Next(0, inputList.Count);
+            randomList.Add(inputList[randomIndex]);
+            inputList.RemoveAt(randomIndex);
+        }
+        
+        
+        return randomList;
+       
+    }
+
+
+   
 }
