@@ -34,6 +34,9 @@ public class twitchchat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             SendChat("A키를 누른거 같은데 맞나요?");
+        }else if (Input.GetKeyDown(KeyCode.B))
+        {
+            SendChat("B키를 누른거 같은데 맞나요?");
         }
 
     }
