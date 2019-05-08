@@ -9,7 +9,8 @@ public class ButtonClick : MonoBehaviour {
   public Dropdown dropdown;
   public Text dropdownText;
   public void buttonClick() {
-    //dropdown.te
+        //dropdown.te
+        Debug.Log(":dd");
     if (dropdownText.text == "연결하기") {
       Debug.Log(dropdown.options[dropdown.value].text + "( " + dropdown.value + ")");
       publicPostData clientPostData = new publicPostData();
