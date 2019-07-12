@@ -26,6 +26,9 @@ namespace WindowsFormsApp1 {
     // 서버를 만든다.
     AsynchronousSocketServer asyncServer = new AsynchronousSocketServer();
 
+    private int nowBPM = 0;
+    private int nowTime = 17;
+
     // Auth 성공여부를 판단하여 미밴드 클래스를 넘겨주는 delegate
     delegate void OnAuthHandler(MiBand d, bool s);
     // delegate 처리 함수
@@ -56,6 +59,10 @@ namespace WindowsFormsApp1 {
         Invoke(c, new object[] { d, v });
       } else {
         listBox3.Items.Add(String.Format("{0} bpm", v));
+        nowBPM = v;
+        nowTime = 17;
+        timer1.Enabled = true;
+        timer2.Enabled = true;
 
         ServerBPMData serverPostData = new ServerBPMData();
         serverPostData.nowBPM = (int)v;
@@ -256,6 +263,34 @@ namespace WindowsFormsApp1 {
       Application.ExitThread();
       Environment.Exit(0);
       Application.Exit();
+    }
+
+    private void timer1_Tick(object sender, EventArgs e) {
+      Random r = new Random(unchecked((int)DateTime.Now.Ticks) + nowBPM);
+      int fakeBPM = 0;
+      if (nowBPM >= 145) {
+        fakeBPM = r.Next(-4, 1);
+      } else if (nowBPM <= 80) {
+        fakeBPM = r.Next(-1, 4);
+      } else {
+        fakeBPM = r.Next(-3, 4);
+      }
+      nowBPM += fakeBPM;
+      listBox3.Items.Add(String.Format("{0} bpm", nowBPM));
+
+      ServerBPMData serverPostData = new ServerBPMData();
+      serverPostData.nowBPM = (int)nowBPM;
+      serverPostData.packet_Type = (int)ServerPacketType.BPMData;
+      AsynchronousSocketServer.Send(asyncServer.getSocket(), Packet.Serialize(serverPostData));
+
+    }
+
+    private void timer2_Tick(object sender, EventArgs e) {
+      nowTime--;
+      if (nowTime <= 0) {
+        timer1.Enabled = false;
+        timer2.Enabled = false;
+      }
     }
 
   }
