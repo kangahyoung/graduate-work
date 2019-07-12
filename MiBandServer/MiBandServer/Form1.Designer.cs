@@ -23,7 +23,6 @@
     /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
     /// </summary>
     private void InitializeComponent() {
-      this.components = new System.ComponentModel.Container();
       this.button1 = new System.Windows.Forms.Button();
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.button2 = new System.Windows.Forms.Button();
@@ -33,8 +32,6 @@
       this.button4 = new System.Windows.Forms.Button();
       this.button5 = new System.Windows.Forms.Button();
       this.comboBox1 = new System.Windows.Forms.ComboBox();
-      this.timer1 = new System.Windows.Forms.Timer(this.components);
-      this.timer2 = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
       // 
       // button1
@@ -126,16 +123,6 @@
       this.comboBox1.Size = new System.Drawing.Size(391, 20);
       this.comboBox1.TabIndex = 8;
       // 
-      // timer1
-      // 
-      this.timer1.Interval = 2000;
-      this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-      // 
-      // timer2
-      // 
-      this.timer2.Interval = 1000;
-      this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -169,8 +156,6 @@
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.ComboBox comboBox1;
-    private System.Windows.Forms.Timer timer1;
-    private System.Windows.Forms.Timer timer2;
   }
 }
 

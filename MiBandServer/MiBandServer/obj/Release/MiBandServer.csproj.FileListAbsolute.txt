@@ -123,33 +123,3 @@ E:\★텍스트자료\OneDrive\ProgramFile Data\2019년도 프로그램 작업\M
 E:\★텍스트자료\OneDrive\ProgramFile Data\2019년도 프로그램 작업\MiBandServer\MiBandServer\obj\Release\MiBandServer.csproj.CopyComplete
 E:\★텍스트자료\OneDrive\ProgramFile Data\2019년도 프로그램 작업\MiBandServer\MiBandServer\obj\Release\MiBandServer.exe
 E:\★텍스트자료\OneDrive\ProgramFile Data\2019년도 프로그램 작업\MiBandServer\MiBandServer\obj\Release\MiBandServer.pdb
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\MiBandServer.exe.config
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\MiBandServer.exe
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\MiBandServer.pdb
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\Acr.Core.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Core.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Interfaces.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Linq.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.PlatformServices.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Threading.Tasks.Extensions.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.ValueTuple.dll
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\Acr.Core.pdb
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Core.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Interfaces.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.Linq.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Reactive.PlatformServices.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.Threading.Tasks.Extensions.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\bin\Release\System.ValueTuple.xml
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.csprojAssemblyReference.cache
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.exe.config
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\WindowsFormsApp1.Form1.resources
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.Properties.Resources.resources
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.csproj.GenerateResource.cache
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.csproj.CoreCompileInputs.cache
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.csproj.CopyComplete
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.exe
-C:\Users\py716\OneDrive\바탕 화면\MibandServer\MiBandServer\obj\Release\MiBandServer.pdb
